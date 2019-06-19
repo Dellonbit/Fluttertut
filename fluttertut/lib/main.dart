@@ -4,7 +4,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Hello Recte',
+      title: 'Hello',
       home: Scaffold(
         appBar: AppBar(
           title: Text('I am a box'),
