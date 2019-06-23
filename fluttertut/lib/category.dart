@@ -31,8 +31,38 @@ class Category extends StatelessWidget {
     // TODO: Build the custom widget here, referring to the Specs.
     return Material( 
       child: Container(
+        height: 100,
         child: InkWell(
-          
+          borderRadius: BorderRadius.circular(50),
+          highlightColor: Colors.blue[50],
+          splashColor: Colors.green[100],
+          onTap: (){
+            print ("i was tapped");
+          },
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(right: 16.0),
+                  child: Icon(Icons.cake),
+                ),
+                Center(
+                  child: Text("hello",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.w700
+                  )
+                  
+                  ),
+
+                )
+              ],
+            ),
+          )
         ),
       )
       );
