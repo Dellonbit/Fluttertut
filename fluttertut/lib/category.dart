@@ -46,16 +46,17 @@ class Category extends StatelessWidget {
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(right: 16.0),
-                  child: Icon(Icons.cake),
+                  child: Icon(Icons.cake, size: 40.0,)
                 ),
                 Center(
                   child: Text("hello",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.grey[700],
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.w700
-                  )
+                  style: Theme.of(context).textTheme.headline,
+                  // style: TextStyle(
+                  //   color: Colors.grey[700],
+                  //   fontSize: 24.0,
+                  //   fontWeight: FontWeight.w700
+                  //)
                   
                   ),
 
