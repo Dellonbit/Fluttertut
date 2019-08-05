@@ -20,7 +20,16 @@ class Category extends StatelessWidget {
   /// the UI, and the icon that represents it (e.g. a ruler).
   // TODO: You'll need the name, color, and iconLocation from main.dart
 
-  const Category();
+  //const Category();
+  const Category({
+    Key key,
+    @required this.name,
+    @required this.color,
+    @required this.iconLocation,
+  })  : assert(name != null),
+        assert(color != null),
+        assert(iconLocation != null),
+        super(key: key);
 
   /// Builds a custom widget that shows [Category] information.
   /// 
@@ -53,7 +62,7 @@ class Category extends StatelessWidget {
                   child: Icon(Icons.cake, size: 40.0,)
                 ),
                 Center(
-                  child: Text("hello",
+                  child: Text(name,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headline,
                   // style: TextStyle(

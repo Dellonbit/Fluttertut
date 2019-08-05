@@ -3,7 +3,7 @@ import 'package:fluttertut/category.dart';
 // TODO: Check if we need to import anything
 
 // TODO: Define any constants
-
+final _backgroundColor = Colors.green[100];
 /// Category Route (screen).
 ///
 /// This is the 'home' screen of the Unit Converter. It shows a header and
@@ -37,6 +37,14 @@ class CategoryRoute extends StatelessWidget {
     Colors.grey,
   ];
 
+  /// For portrait, we construct a [ListView] from the list of category widgets.
+  Widget _buildCategoryWidgets(List<Widget> categories) {
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) => categories[index],
+      itemCount: categories.length,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: Create a list of the eight Categories, using the names and colors
@@ -50,17 +58,35 @@ class CategoryRoute extends StatelessWidget {
         color: _baseColors[i],
         iconLocation: Icons.cake,
       ));
-
+    }
 
     // TODO: Create a list view of the Categories
-    final listView = Container();
+    //final listView = Container();
+    final listView = Container(
+      color: _backgroundColor,
+      padding: EdgeInsets.symmetric(horizontal: 8.0),
+      child: _buildCategoryWidgets(categories),
+    );
+
 
     // TODO: Create an App Bar
-    final appBar = AppBar();
+    final appBar = AppBar(
+      elevation: 0.0,
+      title: Text(
+        'Unit Converter',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 30.0,
+        ),
+      ),
+      centerTitle: true,
+      backgroundColor: _backgroundColor,
+    );
 
     return Scaffold(
       appBar: appBar,
       body: listView,
     );
   }
+ 
 }
