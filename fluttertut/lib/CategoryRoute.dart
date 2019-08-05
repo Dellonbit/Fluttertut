@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:fluttertut/category.dart';
 // TODO: Check if we need to import anything
 
 // TODO: Define any constants
@@ -34,6 +34,7 @@ class CategoryRoute extends StatelessWidget {
     Colors.greenAccent,
     Colors.purpleAccent,
     Colors.red,
+    Colors.grey,
   ];
 
   @override
@@ -41,6 +42,15 @@ class CategoryRoute extends StatelessWidget {
     // TODO: Create a list of the eight Categories, using the names and colors
     // from above. Use a placeholder icon, such as `Icons.cake` for each
     // Category. We'll add custom icons later.
+    final categories = <Category>[];
+
+    for (var i = 0; i < _categoryNames.length; i++) {
+      categories.add(Category(
+        name: _categoryNames[i],
+        color: _baseColors[i],
+        iconLocation: Icons.cake,
+      ));
+
 
     // TODO: Create a list view of the Categories
     final listView = Container();
